@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* This is for the main stuff */
+body, html {
+  height: 100%;
+  margin: 0;
+  
+}
+
+/*only for the have bar tbh*/
+body {
+    margin: 0;
+    background: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+h1{
+  font: "Oswald",  sans-serif; 
+  font-size: 4em; 
+  font-weight:700;
+}
+
+h3 {
+  font-family:'Oswald', sans-serif; 
+  font-size: 1em; 
+  font-weight:400; 
+  letter-spacing:8px; 
+  text-transform: uppercase; 
+  
+}
+
+
+p{
+  font-family: "Oswald",  sans-serif; 
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+
+
+
+
+:root {
+    --background: rgba(0, 0, 0, .95);
+    --pink: #d67ce9;
+    --gray: #474747;
+}
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.hamburger {
+    width: 40px;
+    cursor: pointer;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    color: white;
+    font-size: 18px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    height: 100%;
+    display: flex;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.nav-toggle {
+    z-index: -1;
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    height: 40px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--background);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+}
+
+nav a:hover {
+    color: rgba(255, 255, 255, 0.85);
+    
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+
+  /* -------------------------------- 
+
+Navbar Decoration 
+
+-------------------------------- */
+  
+.a-link {
+  position: relative;
+  display: inline-block;
+}
+
+.a-link::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: all .15s;
+  z-index: -1;
+}
+
+/* Slider */
+.a-link.slide {
+  overflow: hidden;
+}
+.a-link.slide span {
+  display: inline-block;
+  transition: all .5s;
+}
+.a-link.slide span::after {
+  position: absolute;
+  left: 0;
+  content: attr(dd-text);
+  color: var(--pink);
+}
+
+/* left */
+.a-link.slide.left span::after {
+  left: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.a-link.slide.left:focus span,
+  .a-link.slide.left:hover span {
+  transform: translateX(100%);
+}
+
+
+
+
+  /* -------------------------------- 
+
+Parallax Scroll
+
+-------------------------------- */
+
+
+.bgimg-1 {
+  background-image: url("/test/images/ocelot.png");
+  min-height: 910px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: 45% 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.bgimg-2 {
+  background-image: url("/test/images/type-book-home.png");
+  min-height: 800px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: 45% 17%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+.bgimg-3 {
+  background-image: url("/test/images/eastside.gif");
+  min-height: 800px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: 45% 17%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caption.title {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 40%;
+  text-align: center;
+  color: #000;
+ font-weight:400; 
+
+  background-color: rgba(211, 196, 174, 0.582);
+}
+
+.caption.about{
+  position: absolute;
+  top: 43%;
+  left: 24%;
+  width: 50%;
+  text-align: center;
+  color: rgb(36, 32, 32);
+  font-weight:700; 
+  font-size: 6em;
+  background-color: rgba(255, 255, 255, 0.308);
+  box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.493);
+}
+
+
+/* no spacing when using two words as div class*/
+.image.breaker{
+  background-color:rgb(0, 0, 0);
+  
+  padding: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- 
+
+Screan size
+
+-------------------------------- */
+
+
+/*Navbar*/
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .logo {
+      float: left;
+      width: 19%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+  }
+  
+  nav {
+    position: relative;
+    text-align: center;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    width: 60%;
+    float: right;
+    padding-top: 30px;
+    
+    /* end Edge support stuff */
+    display: flex;
+    justify-content: flex-end; /*Adds space at the*/
+    align-items: middle;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-bottom: 0;
+  }
+
+  
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  
+  nav a::before {
+    content: '';
+    display: block;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+  
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  h1{
+    font-size: 3em;
+  }
+
+  h3{
+    font-size: 1em;
+  }
+
+  /* Turn off parallax scrolling for tablets and phones */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+
+  .bgimg-1 {
+    min-height: 610px; 
+  }
+
+  .bgimg-2 {
+    min-height: 700px;
+  }
+
+  .bgimg-3 {
+    min-height: 600px;
+  }
+
+  .image.breaker{
+    background-color:rgb(0, 0, 0);
+    
+    padding: 100px;
+    
+  }
+
+  .caption.title {
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    background-color: rgba(211, 196, 174, 0.767);
+
+  }
+
+  .caption.about{
+    top: 43%;
+    left: 22%;
+    width: 60%;
+    color: rgb(36, 32, 32);
+    font-size: 4em;
+    }
+  
+  .caption.about.an{
+    left: 14%;
+    width: 73%;
+
+    font-size: 4em;
+
+  }
+}
