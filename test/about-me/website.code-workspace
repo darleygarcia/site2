@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../Downloads/about-me-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web-type"
+	}
+}
